@@ -12,6 +12,9 @@ def creating_table():
     # print(sql_string)
     # Running our sql command using our cursor
     cursor.executescript(sql_string)
+print(cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall())  # reading the tables in the db
+# creating_table()
+
 
 # Reading data
 def select_query(query):

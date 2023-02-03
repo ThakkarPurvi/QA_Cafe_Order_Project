@@ -1,16 +1,16 @@
 
 
-CREATE TABLE qa_cafe (
-  order_id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE qacafe (
+  order_id INTEGER PRIMARY KEY AUTOINCREMENT,
   customer_name VARCHAR(50) NOT NULL,
   order_date DATE NOT NULL,
   item_name VARCHAR(50) NOT NULL,
-  item_quantity INT NOT NULL,
+  item_quantity INTEGER NOT NULL,
   item_price DECIMAL(10,2) NOT NULL,
   total_cost DECIMAL(10,2) NOT NULL
 );
 
-INSERT INTO qa_cafe_order (customer_name, order_date, item_name, item_quantity, item_price, total_cost)
+INSERT INTO qacafe (customer_name, order_date, item_name, item_quantity, item_price, total_cost)
 VALUES ('Akash Sharma', '2023-02-01', 'Coffee', 2, 3.5, 7.00),
        ('Nick Jones', '2023-02-02', 'Tea', 1, 2.5, 2.50),
        ('Alan Sugar', '2023-02-03', 'Coffee', 1, 3.5, 3.50),

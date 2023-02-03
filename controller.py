@@ -17,12 +17,13 @@ def qa_cafe_app():
         4. Update an order
         5. Delete an order
         6. Delete all orders
+        7. Exit
         """
     )
     running = True
 
     while running:
-        choice = int(input("Please choose a number (1-6): "))
+        choice = int(input("Please choose a number (1-7): "))
         if choice == 1:
             print(create_order())
         elif choice == 2:
@@ -35,14 +36,17 @@ def qa_cafe_app():
             print(delete_order_id())
         elif choice == 6:
             print(delete_all_order_id())
+        elif choice == 7:
+            print(f"----------- Thank you for your using QA Cafe, have a nice day! -----------")
+            exit()
         else:
             print("Incorrect choice.. try again..")
         end_choice = input("Do you want to query more data Y / N: ")
         if end_choice.upper() == "N":
+            print(f"----------- Thank you for your using QA Cafe, have a nice day! -----------")
             running = False
 
-# creating_table()
 qa_cafe_app()
 
 
-# print(service.getAll())
+# print(service.read_all_qa_cafe_order())
