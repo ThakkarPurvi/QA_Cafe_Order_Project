@@ -1,13 +1,16 @@
-# The controller acts as the API for the app, in this case it will exist as a terminal based app
-# using inputs and if statements to specify what the app should do
+"""The controller acts as the API for the app, in this case it will exist as a terminal based app
+    using inputs and if statements to specify what the app should do
+    It will run commands from the service file, which in turn uses the DB file to
+    query and create data and will return the data back to the user"""
 
-# It will run commands from the service file, which in turn uses the DB file to
-# query and create data and will return the data back to the user
+import sys
+from service import update_order_id, delete_order_id, delete_all_order_id
+from service import create_order, read_all_qa_cafe_order, read_by_id
 
-from service import *
-
+THANK_YOU = "----------- Thank you for your using QA Cafe, have a nice day! -----------"
 
 def qa_cafe_app():
+    """Cafe App"""
     print(
         """
         Welcome to the QA Cafe, what would you like to do? 
@@ -37,16 +40,13 @@ def qa_cafe_app():
         elif choice == 6:
             print(delete_all_order_id())
         elif choice == 7:
-            print(f"----------- Thank you for your using QA Cafe, have a nice day! -----------")
-            exit()
+            sys.exit(f"{THANK_YOU}")
         else:
             print("Incorrect choice.. try again..")
         end_choice = input("Do you want to query more data Y / N: ")
         if end_choice.upper() == "N":
-            print(f"----------- Thank you for your using QA Cafe, have a nice day! -----------")
-            running = False
+            sys.exit(f"{THANK_YOU}")
 
 qa_cafe_app()
 
-
-# print(service.read_all_qa_cafe_order())
+# This is a placeholder for correct code for this message.
