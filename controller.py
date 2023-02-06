@@ -43,7 +43,7 @@ def qa_cafe_app():
             sys.exit(f"{THANK_YOU}")
         else:
             print("Incorrect choice.. try again..")
-        end_choice = input("Do you want to query more data Y / N: ")
+        end_choice = input("\nDo you want to query more data Y / N: ")
         if end_choice.upper() == "N":
             sys.exit(f"{THANK_YOU}")
 
