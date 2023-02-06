@@ -12,8 +12,8 @@ def create_order():
                   "VALUES ('Vidya Sharma', '2023-02-09', 'Coffee', 2, 3.5, 7.00)";
     cursor.execute(qa_cafe_order_query)
     select_query = "SELECT * FROM qacafe"
-    print("\n", cursor.execute(select_query).fetchall())
-    return f"\n--- Order has been Created ---\n"
+    print("\n--- Order has been Created ---\n")
+    return cursor.execute(select_query).fetchall()
 # create_order()
 
 
@@ -22,15 +22,15 @@ def create_order():
 def read_by_id():
     order_id = int(input("Please enter the order_id you want to view: "))
     query = f"SELECT * FROM qacafe WHERE order_id = {order_id}"
-    print("\n", select_query(query))
-    return f"\n--- Order id: {order_id} has been displayed. ---\n"
+    print(f"\n--- Order id: {order_id} has been displayed. ---\n")
+    return select_query(query)
 
 
 """ ======== READ ALL ORDER ======== """
 def read_all_qa_cafe_order():
     query = "SELECT * FROM qacafe"
-    print("\n", select_query(query))
-    return f"--- All orders have been printed above ---\n"
+    print(f"\n--- All orders have been printed below ---")
+    return select_query(query)
 
 """ ======== UPDATE AN ORDER ======== """
 def update_order_id():
